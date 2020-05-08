@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/units/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/pngwave (1).png" type="Texture" id=2]
+
+[node name="Level" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "A platformer with platform.."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 468, 59 )
+
+[node name="platform" type="KinematicBody2D" parent="."]
+
+[node name="platform" type="Sprite" parent="platform"]
+position = Vector2( 498, 461 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform"]
+polygon = PoolVector2Array( 509, 434, 402, 435, 398, 475, 435, 507, 569, 510, 596, 465, 596, 436 )
+
+[node name="platform2" type="KinematicBody2D" parent="."]
+position = Vector2( 194, -128 )
+
+[node name="platform" type="Sprite" parent="platform2"]
+position = Vector2( 498, 461 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform2"]
+polygon = PoolVector2Array( 509, 434, 402, 435, 398, 475, 435, 507, 569, 510, 596, 465, 596, 436 )
+
+[node name="platform3" type="KinematicBody2D" parent="."]
+position = Vector2( -132, -219 )
+
+[node name="platform" type="Sprite" parent="platform3"]
+position = Vector2( 498, 461 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform3"]
+polygon = PoolVector2Array( 509, 434, 402, 435, 398, 475, 435, 507, 569, 510, 596, 465, 596, 436 )
