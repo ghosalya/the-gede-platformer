@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/PinClipart.com_ax-clipart_521463.png" type="Texture" id=1]
+[ext_resource path="res://scripts/projectile/thrown_axe.gd" type="Script" id=2]
+
+[node name="ThrownAxe" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="PinClipartcom_ax-clipart_521463" type="Sprite" parent="KinematicBody2D"]
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
+polygon = PoolVector2Array( 3.32944, 3.62713, 6.6636, 1.30513, 9.34284, -1.85041, 11.4862, -6.49442, 11.903, -11.6743, 7.13991, -9.29273, -0.778719, -11.317, -2.98165, -8.34012, -2.38626, -6.91119, -6.49442, -0.361948, -12.091, 9.70007, -11.6743, 11.4862, -10.2453, 11.903, -8.63781, 11.0099, -8.04242, 7.13991, -4.94642, 1.30513, 0.888361, -4.88688, 3.15083, -1.49318 )
