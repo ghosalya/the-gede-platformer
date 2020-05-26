@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/main_menu.tscn" type="PackedScene" id=1]
+
+[node name="root" type="Node"]
+
+[node name="game" type="Node" parent="."]
+
+[node name="ui" type="Node" parent="."]
+
+[node name="MainMenu" parent="ui" instance=ExtResource( 1 )]
