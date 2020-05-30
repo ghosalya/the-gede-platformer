@@ -7,8 +7,10 @@
 [node name="Level" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = -200.0
+margin_top = 15.0
+margin_right = -23.0
+margin_bottom = 29.0
 text = "A platformer with platform.."
 __meta__ = {
 "_edit_use_anchors_": false
@@ -31,3 +33,6 @@ position = Vector2( 670, 200 )
 
 [node name="Dummy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 607, 166 )
+
+[node name="Dummy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 665, 167 )
