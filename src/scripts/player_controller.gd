@@ -11,7 +11,7 @@ var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	set_meta("type", "player")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,14 +52,13 @@ func process_movement(delta):
 		velocity.x = 0
 
 func process_jump():
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+	if Input.is_action_just_pressed("player_jump") and is_on_floor():
 		velocity.y += -300
 
 
 func process_atk():
 	if Input.is_action_just_pressed("player_atk"):
 		var atk_proj = PROJECTILE.instance()
-		print(atk_proj.get_child(0).facing)
 		atk_proj.get_child(0).facing = facing
 		atk_proj.position = position + Vector2(50 * facing, 0)
 		get_parent().add_child(atk_proj)

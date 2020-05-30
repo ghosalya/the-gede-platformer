@@ -9,3 +9,5 @@
 [node name="ui" type="Node" parent="."]
 
 [node name="MainMenu" parent="ui" instance=ExtResource( 1 )]
+margin_left = -1.0
+margin_right = -1.0
