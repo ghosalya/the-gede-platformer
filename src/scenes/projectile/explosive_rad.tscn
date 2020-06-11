@@ -9,7 +9,7 @@ radius = 127.308
 [node name="Area2D" type="Area2D"]
 script = ExtResource( 2 )
 
-[node name="explode_radius" type="Sprite" parent="."]
+[node name="sprite" type="Sprite" parent="."]
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 1 )
 
