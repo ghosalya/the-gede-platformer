@@ -30,7 +30,7 @@ func _physics_process(delta):
 	if unit_hit:
 		if "type" in unit_hit.collider.get_meta_list():
 			if unit_hit.collider.get_meta("type") == "enemy":
-				unit_hit.collider.take_damage(1)
+				unit_hit.collider.damage(1)
 				
 				# TODO: implement going through enemies and remove the
 				#		"return on hit" implementation

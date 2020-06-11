@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/units/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/units/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/objects/ShortPlatform.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/units/Dummy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/units/enemy/dummy/dummy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/PathWalker2D.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 294.208, 102.848, 0, 0, 0, 0, 178.972, 167.114, 0, 0, 0, 0, 277.587, 383.18, 0, 0, 0, 0, 494.762, 302.294, 0, 0, 0, 0, 510.274, 219.191, 0, 0, 0, 0, 501.41, 127.224, 0, 0, 0, 0, 386.175, 144.953, 0, 0, 0, 0, 294.208, 102.848 )
+}
 
 [node name="Level" type="Node2D"]
 
@@ -36,3 +42,14 @@ position = Vector2( 607, 166 )
 
 [node name="Dummy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 665, 167 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotate = false
+
+[node name="PathWalker2D" parent="Path2D/PathFollow2D" instance=ExtResource( 4 )]
+SPEED = 500.0
+
+[node name="Dummy" parent="Path2D/PathFollow2D/PathWalker2D" instance=ExtResource( 3 )]
